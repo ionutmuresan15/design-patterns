@@ -1,8 +1,9 @@
 import DecoratorDesignPattern.BlackOlivesTopping;
 import DecoratorDesignPattern.MozarellaTopping;
 import DecoratorDesignPattern.MushroomsTopping;
-import FactoryDesignPattern.Pizza;
-import FactoryDesignPattern.PizzaFactory;
+import FactoryDesignPattern.*;
+
+import static FactoryDesignPattern.PizzaEnum.*;
 
 /*
     Application containing a pizza shop, where the client is able to choose the desired pizza
@@ -23,10 +24,10 @@ public class Main {
 
         PizzaFactory pizzaFactory = new PizzaFactory();
 
-        Pizza veggiePizza = new MozarellaTopping(pizzaFactory.getInstance("VeggiePizza"));
-        Pizza pepperoniPizza = new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance("PepperoniPizza")));
-        Pizza margheritaPizza = new BlackOlivesTopping(new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance("MargheritaPizza"))));
-        Pizza basicPepperoniPizza = pizzaFactory.getInstance("PepperoniPizza");
+        Pizza veggiePizza = new MozarellaTopping(pizzaFactory.getInstance(VEGGIE_PIZZA));
+        Pizza pepperoniPizza = new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance(PEPPERONI_PIZZA)));
+        Pizza margheritaPizza = new BlackOlivesTopping(new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance(MARGHERITA_PIZZA))));
+        Pizza basicPepperoniPizza = pizzaFactory.getInstance(PEPPERONI_PIZZA);
 
         System.out.println("Ingredients for the veggie pizza that you ordered: "  + veggiePizza.showPizzaIngredients() + ".");
         System.out.println("The total cost for the veggie pizza that you ordered: " + veggiePizza.getCost() + "$");
@@ -45,6 +46,5 @@ public class Main {
 
         System.out.println("Ingredients for the pepperoni pizza that you ordered: "  + basicPepperoniPizza.showPizzaIngredients() + ".");
         System.out.println("The total cost for the pepperoni pizza that you ordered: " + basicPepperoniPizza.getCost() + "$");
-
     }
 }
