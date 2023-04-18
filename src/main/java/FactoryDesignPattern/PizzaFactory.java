@@ -1,15 +1,17 @@
 package FactoryDesignPattern;
 
+import static FactoryDesignPattern.PizzaEnum.*;
+
 public class PizzaFactory {
 
     public Pizza getInstance(PizzaEnum pizzaName){
-        if(pizzaName.equals(PizzaEnum.VEGGIE_PIZZA)){
+        if(pizzaName.equals(VEGGIE_PIZZA)){
             return new VeggiePizza();
         }
-        else if(pizzaName.equals(PizzaEnum.PEPPERONI_PIZZA)){
+        else if(pizzaName.equals(PEPPERONI_PIZZA)){
             return new PepperoniPizza();
         }
-        else if(pizzaName.equals(PizzaEnum.MARGHERITA_PIZZA)){
+        else if(pizzaName.equals(MARGHERITA_PIZZA)){
             return new MargheritaPizza();
         }
         return new NotFoundPizza();

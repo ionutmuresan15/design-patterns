@@ -28,7 +28,7 @@ public class Main {
         Pizza pepperoniPizza = new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance(PEPPERONI_PIZZA)));
         Pizza margheritaPizza = new BlackOlivesTopping(new MushroomsTopping(new MozarellaTopping(pizzaFactory.getInstance(MARGHERITA_PIZZA))));
         Pizza basicPepperoniPizza = pizzaFactory.getInstance(PEPPERONI_PIZZA);
-
+        
         System.out.println("Ingredients for the veggie pizza that you ordered: "  + veggiePizza.showPizzaIngredients() + ".");
         System.out.println("The total cost for the veggie pizza that you ordered: " + veggiePizza.getCost() + "$");
 
